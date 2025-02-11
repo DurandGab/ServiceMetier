@@ -13,7 +13,7 @@ public interface CommandeRepository extends JpaRepository<Commande, Integer> {
     /**
      * Calcule le montant total d'une commande
      * @param numeroCommande le numéro de la commande à traiter
-     * @return le montant total de la commande
+     * @return le montant total de la commande.
      */
     @Query("""
         SELECT SUM(l.quantite * l.produit.prixUnitaire * (1 - l.commande.remise)) as montantTotal
